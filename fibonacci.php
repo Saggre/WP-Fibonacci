@@ -83,8 +83,10 @@ trait Fibonacci {
 	 * @return string
 	 */
 	public function get_sequence( $length ) {
-		if ( $length < 1 ) {
+		if ( $length < 0 ) {
 			return '';
+		} else if ( $length == 0 ) {
+			return '0';
 		} else if ( $length == 1 ) {
 			return '1';
 		}

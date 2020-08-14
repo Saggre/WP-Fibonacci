@@ -86,17 +86,14 @@ trait Fibonacci {
 		if ( $length < 1 ) {
 			return '';
 		} else if ( $length == 1 ) {
-			return '0';
-		} else if ( $length == 2 ) {
-			return '0 1';
+			return '1';
 		}
 
-
-		$ret = '0 1 ';
+		$ret = '1 ';
 		$na  = 0;
 		$nb  = 1;
 		// Limited to 91 numbers because of 64bit int limit
-		for ( $i = 0; $i < $length - 2 && $i < 91; $i ++ ) {
+		for ( $i = 0; $i < $length - 1 && $i < 91; $i ++ ) {
 			$nc  = $nb + $na;
 			$ret .= $nc . ' ';
 			$na  = $nb;

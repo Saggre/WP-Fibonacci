@@ -83,18 +83,17 @@ trait Fibonacci {
 	 * @return string
 	 */
 	public function get_sequence( $length ) {
-		if ( $length < 0 ) {
+		if ( $length <= 0 ) {
 			return '';
-		} else if ( $length == 0 ) {
-			return '0';
-		} else if ( $length == 1 ) {
-			return '1';
+		} else if ( $length < 2 ) {
+			return $length;
 		}
 
 		$ret = '1 ';
 		$na  = 0;
 		$nb  = 1;
-		// Limited to 91 numbers because of 64bit int limit
+
+		// Limited to 91 numbers
 		for ( $i = 0; $i < $length - 1 && $i < 91; $i ++ ) {
 			$nc  = $nb + $na;
 			$ret .= $nc . ' ';
